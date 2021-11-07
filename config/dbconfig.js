@@ -1,13 +1,14 @@
+require('dotenv').config()
 const mysql = require('mysql');
 
 var connection;
 
 connection = mysql.createConnection({
-    host     : 'database-1.cucmlkcnfypn.us-east-1.rds.amazonaws.com',
-    user     : 'admin',
-    password : 'meenamegh',
-    port     : '3306',
-    database : 'Uber'
+    host     : process.env.HOST,
+    user     : process.env.USER,
+    password : process.env.PASSWORD,
+    port     : process.env.PORT,
+    database : process.env.DATABASE
   });
   
   connection.connect(function(err) {
